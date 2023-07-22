@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { itemsReducer } from './state/reducers/items.reducers';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,9 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({
+      estadoDeItems: itemsReducer // Se vincula la función Reducer, en este caso ubicada en items.reducers.ts
+    }),
     StoreDevtoolsModule.instrument({ name: 'TEST' }) // maxAge: 25, logOnly: environment.production
   ],
   providers: [],
