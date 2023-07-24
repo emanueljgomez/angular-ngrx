@@ -9,6 +9,8 @@ import { loadItems } from '../../../../state/actions/items.actions';
 })
 export class ShowCasePageComponent implements OnInit {
 
+  // Escuchar valor: Selector de NgRx
+  
   constructor(private store: Store<any>) {}
 
   ngOnInit(): void {

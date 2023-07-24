@@ -1,12 +1,16 @@
 import { createReducer, on } from "@ngrx/store";
 import { ItemModel } from "../../core/models/Item.interface"; // Importación de Interface
 import { loadItems } from "../actions/items.actions"; // Importación de Acción
+import { ItemState } from "../../core/models/items.state";
 
 // Estado Inicial:
+/*
 export const initialState: {
     loading: boolean,
     items: ReadonlyArray<ItemModel>;
 } = { loading: false, items: [] }
+*/
+export const initialState: ItemState = {  loading: false, items: [] }
 
 // Funciones Reducers:
 export const itemsReducer = createReducer (
