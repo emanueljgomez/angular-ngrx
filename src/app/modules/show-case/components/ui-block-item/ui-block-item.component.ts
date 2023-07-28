@@ -3,6 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ItemModel } from '@core/models/Item.interface';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { selectListItems } from '../../../../state/selectors/items.selectors';
+import { AppState } from '../../../../state/app.state';
 
 @Component({
   selector: 'app-ui-block-item',
@@ -11,13 +13,12 @@ import { Observable } from 'rxjs';
 })
 export class UiBlockItemComponent implements OnInit {
 
+  items$: Observable<any> = new Observable();
 
-  constructor() {
-
-
-  }
+  constructor( private store: Store<AppState> ) {}
 
   ngOnInit(): void {
+    this.items$ = this.store.select(selectListItems) // Suscripción al Selector
   }
 
 
