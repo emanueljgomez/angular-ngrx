@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { loadItems } from '../../../../state/actions/items.actions';
 import { Observable } from 'rxjs';
 import { selectLoading } from '../../../../state/selectors/items.selectors';
-import { ShowCaseService } from '../../services/show-case.service';
+//import { ShowCaseService } from '../../services/show-case.service'; // El servicio será manejado mediante EFFECTS
 import { ItemModel } from '../../../../core/models/Item.interface';
 import { loadedItems } from '../../../../state/actions/items.actions';
 
@@ -20,7 +20,7 @@ export class ShowCasePageComponent implements OnInit {
   
   constructor(
     private store: Store<any>,
-    private showCaseService: ShowCaseService
+    // private showCaseService: ShowCaseService // El servicio será manejado mediante EFFECTS
     ) {}
 
   ngOnInit(): void {
@@ -29,13 +29,13 @@ export class ShowCasePageComponent implements OnInit {
 
     this.store.dispatch(loadItems()); // Disparamos Acción loadItems
 
+    /* // El servicio será manejado mediante EFFECTS:
     this.showCaseService.getDataApi()
       .subscribe((response: ItemModel[])  => {
 
         this.store.dispatch(loadedItems({items: response}));  // Disparamos Acción loadedItems usando como parámetro la data que llega desde el servicio
 
       });
+    */
   }
-
-
 }

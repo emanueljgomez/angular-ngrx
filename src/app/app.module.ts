@@ -8,6 +8,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { itemsReducer } from './state/reducers/items.reducers';
 import { ROOT_REDUCERS } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { ItemsEffects } from './state/effects/items.effects';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { ROOT_REDUCERS } from './state/app.state';
     HttpClientModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     //StoreModule.forRoot({estadoDeItems: itemsReducer // Se vincula la función Reducer, en este caso ubicada en items.reducers.ts}),
-    StoreDevtoolsModule.instrument({ name: 'TEST' }) // maxAge: 25, logOnly: environment.production
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([ItemsEffects]) // Importar todos los efectos dentro del array
   ],
   providers: [],
   bootstrap: [AppComponent]
