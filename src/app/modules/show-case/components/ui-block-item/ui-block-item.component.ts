@@ -1,6 +1,6 @@
 
 import { Component, Input, OnInit } from '@angular/core';
-import { ItemModel } from '@core/models/Item.interface';
+//import { ItemModel } from '@core/models/Item.interface';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectListItems } from '../../../../state/selectors/items.selectors';

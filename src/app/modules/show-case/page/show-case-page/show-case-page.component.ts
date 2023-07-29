@@ -4,8 +4,8 @@ import { loadItems } from '../../../../state/actions/items.actions';
 import { Observable } from 'rxjs';
 import { selectLoading } from '../../../../state/selectors/items.selectors';
 //import { ShowCaseService } from '../../services/show-case.service'; // El servicio será manejado mediante EFFECTS
-import { ItemModel } from '../../../../core/models/Item.interface';
-import { loadedItems } from '../../../../state/actions/items.actions';
+//import { ItemModel } from '../../../../core/models/Item.interface';
+//import { loadedItems } from '../../../../state/actions/items.actions';
 
 @Component({
   selector: 'app-show-case-page',

@@ -12,6 +12,8 @@ export class ShowCaseService {
 
   getDataApi(): Observable<any> {
     //TODO: Aqui podemos hacer http.get('api...')
+
+    // Las imágenes no estan funcionando
     const data = [
       {
         name: "Pudgy Penguin #1",
